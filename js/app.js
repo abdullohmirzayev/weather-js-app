@@ -4,6 +4,19 @@ const details = document.getElementById("details");
 const weatherIcon = document.getElementById("weather-icon");
 const overlay = document.getElementById("overlay");
 
+// updata UI
+
+const updateUI = (weather) => {
+  console.log(weather.weather[0].main);
+  details.innerHTML = `
+    <h5 class="mb-3">${weather.name}, ${weather.sys.country}</h5>
+    <p class="mb-3">${weather.weather[0].main}</p>
+    <div class="display-4 mb-3">
+      <span>${Math.round(weather.main.temp)}</span>
+      <span>&deg;C</span>
+    </div>
+    `;
+};
 
 // get weather
 const getWeather = async (city) => {
