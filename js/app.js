@@ -6,6 +6,16 @@ const overlay = document.getElementById("overlay");
 
 changeLocation.city.focus();
 
+// Loader
+
+function loader(state) {
+  if (state) {
+    overlay.classList.remove("d-none");
+  } else {
+    overlay.classList.add("d-none");
+  }
+}
+
 // updata UI
 const updateUI = (weather) => {
   details.innerHTML = `
