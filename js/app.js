@@ -4,10 +4,10 @@ const details = document.getElementById("details");
 const weatherIcon = document.getElementById("weather-icon");
 const overlay = document.getElementById("overlay");
 
-// updata UI
+changeLocation.city.focus();
 
+// updata UI
 const updateUI = (weather) => {
-  console.log(weather.weather[0].main);
   details.innerHTML = `
     <h5 class="mb-3">${weather.name}, ${weather.sys.country}</h5>
     <p class="mb-3">${weather.weather[0].main}</p>
@@ -20,6 +20,8 @@ const updateUI = (weather) => {
   if (card.classList.contains("d-none")) {
     card.classList.remove("d-none");
   }
+
+  weatherIcon.src = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
 };
 
 // get weather
