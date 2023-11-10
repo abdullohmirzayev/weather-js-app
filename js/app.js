@@ -16,6 +16,10 @@ const updateUI = (weather) => {
       <span>&deg;C</span>
     </div>
     `;
+
+  if (card.classList.contains("d-none")) {
+    card.classList.remove("d-none");
+  }
 };
 
 // get weather
